@@ -5,7 +5,7 @@
 //  Copyright(C) 2004-2006 Nippon Telegraph and Telephone Corporation
 #ifndef MECAB_VITERBI_H_
 #define MECAB_VITERBI_H_
-
+#ifdef __cplusplus
 #include <vector>
 #include "mecab.h"
 #include "thread.h"
@@ -50,4 +50,5 @@ class Viterbi {
   whatlog               what_;
 };
 }
+#endif
 #endif  // MECAB_VITERBI_H_

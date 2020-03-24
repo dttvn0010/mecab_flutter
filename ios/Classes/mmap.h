@@ -5,7 +5,7 @@
 //  Copyright(C) 2004-2006 Nippon Telegraph and Telephone Corporation
 #ifndef MECAB_MMAP_H
 #define MECAB_MMAP_H
-
+#ifdef __cplusplus
 #include <errno.h>
 #include <string>
 
@@ -200,4 +200,5 @@ template <class T> class Mmap {
   virtual ~Mmap() { this->close(); }
 };
 }
+#endif
 #endif

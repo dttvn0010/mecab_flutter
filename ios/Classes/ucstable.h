@@ -5,7 +5,7 @@
 //  Copyright(C) 2004-2006 Nippon Telegraph and Telephone Corporation
 #ifndef MECAB_UCS_TABLE_H
 #define MECAB_UCS_TABLE_H
-
+#ifdef __cplusplus
 namespace MeCab {
 
   /* CP932 to UCS2 table */
@@ -155508,4 +155508,5 @@ static const unsigned short int euc_hojo_tbl[65536] = {
   0x0000,  /* 0x5F5F(0xffff-0xa0a0) */
 };
 }
+#endif
 #endif

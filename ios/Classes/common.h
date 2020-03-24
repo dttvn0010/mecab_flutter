@@ -5,7 +5,7 @@
 //  Copyright(C) 2004-2006 Nippon Telegraph and Telephone Corporation
 #ifndef MECAB_COMMON_H_
 #define MECAB_COMMON_H_
-
+#ifdef __cplusplus
 #include <algorithm>
 #include <cmath>
 #include <cstdlib>
@@ -123,5 +123,5 @@ class wlog {
 #define CHECK_DIE(condition) \
 (condition) ? 0 : die() & std::cerr << __FILE__ << \
 "(" << __LINE__ << ") [" << #condition << "] "
-
+#endif
 #endif  // MECAB_COMMON_H_

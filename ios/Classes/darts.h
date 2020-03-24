@@ -6,7 +6,7 @@
 */
 #ifndef DARTS_H_
 #define DARTS_H_
-
+#ifdef __cplusplus
 #define DARTS_VERSION "0.31"
 #include <vector>
 #include <cstring>
@@ -515,4 +515,5 @@ typedef Darts::DoubleArrayImpl<char, unsigned char, long long,
 #endif
 }
 }
+#endif
 #endif

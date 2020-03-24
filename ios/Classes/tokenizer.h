@@ -5,7 +5,7 @@
 //  Copyright(C) 2004-2006 Nippon Telegraph and Telephone Corporation
 #ifndef MECAB_TOKENIZER_H_
 #define MECAB_TOKENIZER_H_
-
+#ifdef __cplusplus
 #include "mecab.h"
 #include "freelist.h"
 #include "dictionary.h"
@@ -131,4 +131,5 @@ class Tokenizer {
   virtual ~Tokenizer() { this->close(); }
 };
 }
+#endif
 #endif  // MECAB_TOKENIZER_H_

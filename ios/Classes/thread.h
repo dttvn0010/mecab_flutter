@@ -5,7 +5,7 @@
 //  Copyright(C) 2004-2006 Nippon Telegraph and Telephone Corporation
 #ifndef MECAB_THREAD_H
 #define MECAB_THREAD_H
-
+#ifdef __cplusplus
 #include "config.h"
 
 namespace MeCab {
@@ -31,4 +31,5 @@ class thread {
   virtual ~thread() {}
 };
 }
+#endif
 #endif

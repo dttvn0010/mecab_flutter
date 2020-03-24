@@ -5,7 +5,7 @@
 //   Copyright(C) 2004-2006 Nippon Telegraph and Telephone Corporation
 #ifndef MECAB_ICONV_H
 #define MECAB_ICONV_H
-
+#ifdef __cplusplus
 #if defined HAVE_ICONV
 #include <iconv.h>
 #endif
@@ -36,5 +36,5 @@ class Iconv {
   bool convert(std::string *);
 };
 }
-
+#endif
 #endif

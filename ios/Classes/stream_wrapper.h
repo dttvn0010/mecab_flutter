@@ -5,7 +5,7 @@
 //  Copyright(C) 2004-2006 Nippon Telegraph and Telephone Corporation
 #ifndef MECAB_STREAM_WRAPPER_H_
 #define MECAB_STREAM_WRAPPER_H_
-
+#ifdef __cplusplus
 #include <cstring>
 #include <fstream>
 #include <iostream>
@@ -51,5 +51,5 @@ class ostream_wrapper {
   }
 };
 }
-
+#endif
 #endif  // MECAB_STREAM_WRAPPER_H_

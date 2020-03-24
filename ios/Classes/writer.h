@@ -5,7 +5,7 @@
 //  Copyright(C) 2004-2006 Nippon Telegraph and Telephone Corporation
 #ifndef MECAB_WRITER_H_
 #define MECAB_WRITER_H_
-
+#ifdef __cplusplus
 #include <string>
 #include "common.h"
 #include "mecab.h"
@@ -53,5 +53,5 @@ class Writer {
   bool (Writer::*write_)(Lattice *lattice, StringBuffer *s) const;
 };
 }
-
+#endif
 #endif  // WRITER_H_

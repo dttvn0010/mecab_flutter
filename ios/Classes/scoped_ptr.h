@@ -5,7 +5,7 @@
 //  Copyright(C) 2004-2006 Nippon Telegraph and Telephone Corporation
 #ifndef MECAB_SCOPED_PTR_H
 #define MECAB_SCOPED_PTR_H
-
+#ifdef __cplusplus
 #include <cstring>
 #include <string>
 
@@ -92,4 +92,5 @@ class scoped_string: public scoped_array<char> {
   }
 };
 }
+#endif
 #endif

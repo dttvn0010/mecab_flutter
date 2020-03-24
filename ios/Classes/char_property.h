@@ -4,7 +4,7 @@
 //  Copyright(C) 2004-2006 Nippon Telegraph and Telephone Corporation
 #ifndef MECAB_CHARACTER_CATEGORY_H_
 #define MECAB_CHARACTER_CATEGORY_H_
-
+#ifdef __cplusplus
 #include "mmap.h"
 #include "scoped_ptr.h"
 #include "ucs.h"
@@ -89,4 +89,5 @@ class CharProperty {
   whatlog                    what_;
 };
 }
+#endif
 #endif   // MECAB_CHARACTER_CATEGORY_H_

@@ -5,7 +5,7 @@
 //  Copyright(C) 2004-2006 Nippon Telegraph and Telephone Corporation
 #ifndef MECAB_UCS_H
 #define MECAB_UCS_H
-
+#ifdef __cplusplus
 #ifndef MECAB_USE_UTF8_ONLY
 #include "ucstable.h"
 #endif
@@ -144,5 +144,5 @@ inline unsigned short cp932_to_ucs2(const char *begin, const char *end,
 }
 #endif
 }
-
+#endif
 #endif

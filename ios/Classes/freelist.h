@@ -5,7 +5,7 @@
 //  Copyright(C) 2004-2006 Nippon Telegraph and Telephone Corporation
 #ifndef MECAB_FREELIST_H
 #define MECAB_FREELIST_H
-
+#ifdef __cplusplus
 #include <vector>
 #include <algorithm>
 #include "utils.h"
@@ -82,4 +82,5 @@ template <class T> class ChunkFreeList {
   }
 };
 }
+#endif
 #endif

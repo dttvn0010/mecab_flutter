@@ -5,7 +5,7 @@
 //  Copyright(C) 2004-2006 Nippon Telegraph and Telephone Corporation
 #ifndef MECAB_NBEST_GENERATOR_H_
 #define MECAB_NBEST_GENERATOR_H_
-
+#ifdef __cplusplus
 #include <queue>
 #include "mecab.h"
 #include "freelist.h"
@@ -39,5 +39,5 @@ class NBestGenerator {
   bool next();
 };
 }
-
+#endif
 #endif  // MECAB_NBEST_GENERATOR_H_

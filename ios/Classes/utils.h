@@ -5,7 +5,7 @@
 //   Copyright(C) 2004-2006 Nippon Telegraph and Telephone Corporation
 #ifndef MECAB_UTILS_H
 #define MECAB_UTILS_H
-
+#ifdef __cplusplus
 #include <algorithm>
 #include <cstdlib>
 #include <cstdio>
@@ -253,4 +253,5 @@ std::wstring Utf8ToWide(const std::string &input);
 std::string WideToUtf8(const std::wstring &input);
 #endif
 }
+#endif
 #endif

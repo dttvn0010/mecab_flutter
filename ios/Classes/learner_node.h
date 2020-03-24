@@ -5,7 +5,7 @@
 //  Copyright(C) 2004-2006 Nippon Telegraph and Telephone Corporation
 #ifndef MECAB_LEARNER_NODE_H_
 #define MECAB_LEARNER_NODE_H_
-
+#ifdef __cplusplus
 #include <cstring>
 #include "mecab.h"
 #include "common.h"
@@ -130,5 +130,5 @@ inline void calc_beta(LearnerNode *n) {
   }
 }
 }
-
+#endif
 #endif  // MECAB_LEARNER_NODE_H_

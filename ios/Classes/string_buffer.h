@@ -5,7 +5,7 @@
 //  Copyright(C) 2004-2006 Nippon Telegraph and Telephone Corporation
 #ifndef MECAB_STRINGBUFFER_H
 #define MECAB_STRINGBUFFER_H
-
+#ifdef __cplusplus
 #include <string>
 #include "common.h"
 #include "utils.h"
@@ -70,5 +70,5 @@ class StringBuffer {
   }
 };
 }
-
+#endif
 #endif

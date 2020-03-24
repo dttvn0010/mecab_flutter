@@ -5,7 +5,7 @@
 //  Copyright(C) 2004-2006 Nippon Telegraph and Telephone Corporation
 #ifndef MECAB_CONNECTOR_H_
 #define MECAB_CONNECTOR_H_
-
+#ifdef __cplusplus
 #include "mecab.h"
 #include "mmap.h"
 #include "common.h"
@@ -64,4 +64,5 @@ class Connector {
   virtual ~Connector() { this->close(); }
 };
 }
+#endif
 #endif  // MECAB_CONNECTOR_H_

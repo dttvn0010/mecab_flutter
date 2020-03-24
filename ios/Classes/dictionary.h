@@ -5,7 +5,7 @@
 //  Copyright(C) 2004-2006 Nippon Telegraph and Telephone Corporation
 #ifndef MECAB_DICTIONARY_H_
 #define MECAB_DICTIONARY_H_
-
+#ifdef __cplusplus
 #include "mecab.h"
 #include "mmap.h"
 #include "darts.h"
@@ -96,4 +96,5 @@ class Dictionary {
   Darts::DoubleArray  da_;
 };
 }
+#endif
 #endif  // MECAB_DICTIONARY_H_

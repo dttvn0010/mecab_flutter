@@ -5,7 +5,7 @@
 //  Copyright(C) 2004-2006 Nippon Telegraph and Telephone Corporation
 #ifndef MECAB_CONTEXT_ID_H
 #define MECAB_CONTEXT_ID_H
-
+#ifdef __cplusplus
 #include <map>
 #include <string>
 #include <vector>
@@ -47,4 +47,5 @@ class ContextID {
   }
 };
 }
+#endif
 #endif

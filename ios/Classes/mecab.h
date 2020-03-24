@@ -6,7 +6,7 @@
 */
 #ifndef MECAB_MECAB_H_
 #define MECAB_MECAB_H_
-
+#ifdef __cplusplus
 /* C/C++ common data structures  */
 
 /**
@@ -1505,5 +1505,6 @@ MECAB_DLL_EXTERN const char*  getLastError();
 MECAB_DLL_EXTERN const char*  getTaggerError();
 #endif
 }
+#endif
 #endif
 #endif  /* MECAB_MECAB_H_ */
