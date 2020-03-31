@@ -2,10 +2,13 @@
 
 MeCab(Japanese Morphological Analyzer) wrapper for Flutter on iOS/Android.
 
-#Usage
-Add this plug_in `mecab_flutter` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
+## Usage
 
-Copy Mecab dictionary (ipadic) to your assets folder
+1. Add this plug_in `mecab_flutter` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
+
+2. Copy Mecab dictionary (ipadic) to your assets folder
+
+3. Try the following example.
 
 ### Example
 
