@@ -33,7 +33,7 @@ for(var token in tokens) {
   for(var i = 0; i < token.features.length; i++) {
     text += token.features[i];
     if(i + 1 < token.features.length) {
-	  text += ",";
+       text += ",";
     }
   }
   text += "\n";
