@@ -1,14 +1,24 @@
 # mecab_dart
 
-A new flutter plugin project.
+MeCab(Japanese Morphological Analyzer) wrapper for Flutter on iOS/Android.
 
-## Getting Started
+```dart
+var tagger = new Mecab();
+await tagger.init("assets/ipadic", true);
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+var tokens = tagger.parse('にわにわにわにわとりがいる。');
+var text = '';
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+for(var token in tokens) {
+  text += token.surface + "\t";
+  for(var i = 0; i < token.features.length; i++) {
+    text += token.features[i];
+    if(i + 1 < token.features.length) {
+	  text += ",";
+    }
+  }
+  text += "\n";
+}
+```
+
+

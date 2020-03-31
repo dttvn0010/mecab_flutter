@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:core';
 import 'package:flutter/services.dart';
 
 import 'dart:ffi'; 
@@ -26,6 +27,23 @@ final parseFfi = parsePointer.asFunction<parseFunc>();
 final destroyMecabPointer = mecabDartLib.lookup<NativeFunction<destroyMecabFunc>>('destroyMecab');
 final destroyMecabFfi = destroyMecabPointer.asFunction<destroyMecab_func>();
 
+class TokenNode {
+  String surface;
+  List features;
+  
+  TokenNode(String item) {
+    var arr = item.split('\t');
+    if(arr.length > 0) {
+      surface = arr[0];
+    }
+    if(arr.length == 2) {
+      features = arr[1].split(',');
+    }else {
+      features = [];
+    }
+  }
+}
+
 class Mecab {
   Pointer<Void> mecabPtr;
   
@@ -38,7 +56,7 @@ class Mecab {
     }
   }
 
-  Future<void> init(String assetDicDir, String options) async {
+  Future<void> init(String assetDicDir, bool includeFeatures) async {
     var dir = (await getApplicationDocumentsDirectory()).path;  
     var dicdir = "$dir/ipadic";
     var mecabrc = '$dicdir/mecabrc';
@@ -59,15 +77,29 @@ class Mecab {
     await copyFile(dicdir, assetDicDir, 'right-id.def');
     await copyFile(dicdir, assetDicDir, 'sys.dic');
     await copyFile(dicdir, assetDicDir, 'unk.dic');
-
+    
+    var options = includeFeatures? "" : "-Owakati";
     mecabPtr = initMecabFfi(Utf8.toUtf8(options), Utf8.toUtf8(dicdir));
   }
 
-  String parse(String input) {
+  List parse(String input) {
     if(mecabPtr != null) {
-      return Utf8.fromUtf8(parseFfi(mecabPtr, Utf8.toUtf8(input)));
+      var resultStr = Utf8.fromUtf8(parseFfi(mecabPtr, Utf8.toUtf8(input))).trim();
+      
+      var items;      
+      if(resultStr.contains('\n')) {
+        items = resultStr.split('\n');
+      } else {
+        items = resultStr.split(' ');
+      } 
+
+      var tokens = [];
+      for(var item in items) {
+        tokens.add(TokenNode(item));
+      }
+      return tokens;
     }
-    return "";
+    return [];
   }
 
   void destroy() {

@@ -13,6 +13,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
+  String text = "";
   var tagger = new Mecab();
 
   @override
@@ -29,7 +30,21 @@ class _MyAppState extends State<MyApp> {
       // Initialize mecab tagger here 
       //   + 1st parameter : dictionary asset folder
       //   + 2nd parameter : additional mecab options      
-      await tagger.init("assets/ipadic", "-Owakati");
+      await tagger.init("assets/ipadic", true);
+
+      var tokens = tagger.parse('にわにわにわにわとりがいる。');
+
+      for(var token in tokens) {
+        text += token.surface + "\t";
+        for(var i = 0; i < token.features.length; i++) {
+          text += token.features[i];
+          if(i + 1 < token.features.length) {
+            text += ",";
+          }
+        }
+        text += "\n";
+      }
+      //text = tokens.length.toString();
 
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
@@ -50,7 +65,7 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: Text(tagger.parse('にわにわにわにわとりがいる。').trim().replaceAll(' ', '-')),
+          child: Text(text),
         ),
       ),
     );
